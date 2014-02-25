@@ -1936,6 +1936,10 @@
   # @Prompt The address mask when memory encryption is enabled.
   gEfiMdeModulePkgTokenSpaceGuid.PcdPteMemoryEncryptionAddressOrMask|0x0|UINT64|0x30001047
 
+  ## Controls whether TerminalDxe outputs an XTerm resize sequence on terminal
+  #  mode change.
+  gEfiMdeModulePkgTokenSpaceGuid.PcdResizeXterm|FALSE|BOOLEAN|0x00010080
+
 [PcdsPatchableInModule]
   ## Specify memory size with page number for PEI code when
   #  Loading Module at Fixed Address feature is enabled.
