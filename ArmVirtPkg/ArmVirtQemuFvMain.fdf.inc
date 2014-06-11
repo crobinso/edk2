@@ -202,7 +202,11 @@ READ_LOCK_STATUS   = TRUE
   #
   # TianoCore logo (splash screen)
   #
+!if ($(SECURE_BOOT_ENABLE) == TRUE) || ($(NETWORK_IP6_ENABLE) == TRUE)
+  INF MdeModulePkg/Logo/LogoOpenSSLDxe.inf
+!else
   INF MdeModulePkg/Logo/LogoDxe.inf
+!endif
 
   #
   # Ramdisk support

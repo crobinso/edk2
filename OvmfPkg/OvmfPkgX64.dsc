@@ -701,7 +701,11 @@
       NULL|IntelFrameworkModulePkg/Library/LegacyBootManagerLib/LegacyBootManagerLib.inf
 !endif
   }
+!if ($(SECURE_BOOT_ENABLE) == TRUE) || ($(NETWORK_IP6_ENABLE) == TRUE) || ($(TLS_ENABLE) == TRUE)
+  MdeModulePkg/Logo/LogoOpenSSLDxe.inf
+!else
   MdeModulePkg/Logo/LogoDxe.inf
+!endif
   MdeModulePkg/Application/UiApp/UiApp.inf {
     <LibraryClasses>
       NULL|MdeModulePkg/Library/DeviceManagerUiLib/DeviceManagerUiLib.inf
