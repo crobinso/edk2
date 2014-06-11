@@ -18,7 +18,7 @@
 ;------------------------------------------------------------------------------
 
 ; enable this macro for debug messages
-;%define DEBUG
+%define DEBUG
 
 %macro DebugLog 1
 %ifdef DEBUG
