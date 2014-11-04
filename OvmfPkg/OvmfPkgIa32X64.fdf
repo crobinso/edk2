@@ -289,11 +289,13 @@ INF  MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResour
 INF  FatPkg/EnhancedFatDxe/Fat.inf
 INF  MdeModulePkg/Universal/Disk/UdfDxe/UdfDxe.inf
 
+!ifndef $(EXCLUDE_SHELL_FROM_FD)
 !ifndef $(USE_OLD_SHELL)
 INF  ShellPkg/DynamicCommand/TftpDynamicCommand/TftpDynamicCommand.inf
 INF  ShellPkg/Application/Shell/Shell.inf
 !else
 INF  RuleOverride = BINARY USE = X64 EdkShellBinPkg/FullShell/FullShell.inf
+!endif
 !endif
 
 !if ($(SECURE_BOOT_ENABLE) == TRUE) || ($(NETWORK_IP6_ENABLE) == TRUE) || ($(TLS_ENABLE) == TRUE)
