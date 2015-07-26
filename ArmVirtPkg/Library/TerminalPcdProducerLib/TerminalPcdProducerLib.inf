@@ -1,0 +1,41 @@
+## @file
+#  Plugin library for setting up dynamic PCDs for TerminalDxe, from fw_cfg
+#
+#  Copyright (C) 2015-2016, Red Hat, Inc.
+#  Copyright (c) 2014, Linaro Ltd. All rights reserved.<BR>
+#
+#  This program and the accompanying materials are licensed and made available
+#  under the terms and conditions of the BSD License which accompanies this
+#  distribution.  The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php
+#
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR
+#  IMPLIED.
+#
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = TerminalPcdProducerLib
+  FILE_GUID                      = 4a0c5ed7-8c42-4c01-8f4c-7bf258316a96
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = TerminalPcdProducerLib|DXE_DRIVER
+  CONSTRUCTOR                    = TerminalPcdProducerLibConstructor
+
+[Sources]
+  TerminalPcdProducerLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  OvmfPkg/OvmfPkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  DebugLib
+  PcdLib
+  QemuFwCfgLib
+
+[Pcd]
+  gEfiMdeModulePkgTokenSpaceGuid.PcdResizeXterm

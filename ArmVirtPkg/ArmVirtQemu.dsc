@@ -237,6 +237,8 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdSmbiosDocRev|0x0
   gUefiOvmfPkgTokenSpaceGuid.PcdQemuSmbiosValidated|FALSE
 
+  gEfiMdeModulePkgTokenSpaceGuid.PcdResizeXterm|FALSE
+
 [PcdsDynamicHii]
   gArmVirtTokenSpaceGuid.PcdForceNoAcpi|L"ForceNoAcpi"|gArmVirtVariableGuid|0x0|FALSE|NV,BS
 
@@ -314,7 +316,10 @@
   MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
   MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
   MdeModulePkg/Universal/Console/GraphicsConsoleDxe/GraphicsConsoleDxe.inf
-  MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf
+  MdeModulePkg/Universal/Console/TerminalDxe/TerminalDxe.inf {
+    <LibraryClasses>
+      NULL|ArmVirtPkg/Library/TerminalPcdProducerLib/TerminalPcdProducerLib.inf
+  }
   MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
 
   MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
