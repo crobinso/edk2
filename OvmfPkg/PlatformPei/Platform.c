@@ -813,6 +813,7 @@ InitializePlatform (
     PeiFvInitialization ();
     MemMapInitialization ();
     NoexecDxeInitialization ();
+    UPDATE_BOOLEAN_PCD_FROM_FW_CFG (PcdResizeXterm);
   }
 
   InstallClearCacheCallback ();
