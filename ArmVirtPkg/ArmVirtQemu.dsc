@@ -87,6 +87,7 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutUgaSupport|FALSE
 
 [PcdsFixedAtBuild.common]
+  gArmPlatformTokenSpaceGuid.PcdEarlyHelloMessage|"UEFI firmware starting.\r\n"
   gArmPlatformTokenSpaceGuid.PcdCoreCount|1
 !if $(ARCH) == AARCH64
   gArmTokenSpaceGuid.PcdVFPEnabled|1
